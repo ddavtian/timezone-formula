@@ -1,15 +1,3 @@
-# -*- coding: utf-8 -*-
-# vim: ft=yaml
----
-timezone:
-  name: Europe/Berlin
-  tz_UTC: Etc/UTC
-  utc: true
-  path_localtime: /etc/localtime
-  path_zoneinfo: /usr/share/zoneinfo/
-  pkg:
-    name: tzdata
-  dbus:
-    pkg: dbus
-    service: dbus
-    run_service: true
+path_localtime: /etc/localtime
+path_zoneinfo: /usr/share/zoneinfo/
+pkgname: tzdata
