@@ -1,6 +1,6 @@
 # This state configures the timezone.
 
-{%- set timezone = salt['pillar.get']('timezone:lookup:name', 'Europe/Berlin') %}
+{%- set timezone = salt['pillar.get']('timezone:lookup:name', 'America/Los_Angeles') %}
 {%- set utc = salt['pillar.get']('timezone:lookup:utc', True) %}
 {% from "timezone/map.jinja" import confmap with context %}
 

@@ -1,15 +1,5 @@
 {% import_yaml "timezone/defaults.yaml" as defaults %}
 {% import_yaml "timezone/osfamilymap.yaml" as osfamilymap %}
-
-{% set osfam = salt['grains.filter_by'](
-                                        osfamilymap,
-                                        grain='os_family'
-                                        ) or {} %}
-
+{% set osfam = salt['grains.filter_by'](osfamilymap, grain='os_family') or {} %}
 {% do salt['defaults.merge'](defaults, osfam) %}
-
-{%- set confmap = salt['pillar.get'](
-                                'timezone:lookup',
-                                default=defaults,
-                                merge=True,
-                                ) %}
+{%- set confmap = salt['pillar.get']('timezone:lookup',default=defaults,merge=True,) %}
